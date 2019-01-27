@@ -16,7 +16,6 @@ action "ssh" {
 
 action "Deploy with rsync" {
   uses = "./rsync"
-  needs = "ssh"
   secrets = [
     "PRIVATE_KEY",
     "PUBLIC_KEY",
