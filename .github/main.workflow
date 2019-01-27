@@ -14,6 +14,6 @@ action "Deploy with rsync" {
   }
   args = [
     "_site/",
-    "pfs400wm@$HOST:/proj/websource/docs/FAU/fakultaet/phil/www.datascience.phil.fau.de/websource/ghaction-rsync"
+    "pfs400wm@$HOST:/proj/websource/docs/FAU/fakultaet/phil/www.datascience.phil.fau.de/websource/$JUST_GH_REPONAME"
   ]
 }
