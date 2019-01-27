@@ -10,10 +10,10 @@ action "Deploy with rsync" {
     "PUBLIC_KEY"
   ]
   env = {
-    USER = "pfs400wm"
     HOST = "karli.rrze.uni-erlangen.de"
   }
   args = [
-    "$USER@$HOST:/proj/websource/docs/FAU/fakultaet/phil/www.datascience.phil.fau.de/websource/ghaction-rsync"
+    "_site/",
+    "pfs400wm@$HOST:/proj/websource/docs/FAU/fakultaet/phil/www.datascience.phil.fau.de/websource/ghaction-rsync"
   ]
 }
