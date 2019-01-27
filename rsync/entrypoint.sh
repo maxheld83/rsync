@@ -23,4 +23,6 @@ eval "$(ssh-add $SSH_PATH/deploy_key)"
 # ssh-keyscan -t ecdsa-sha2-nistp256 karli.rrze.uni-erlangen.de
 echo 'karli.rrze.uni-erlangen.de,131.188.16.138 ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBFHJVSekYKuF5pMKyHe1jS9mUkXMWoqNQe0TTs2sY1OQj379e6eqVSqGZe+9dKWzL5MRFpIiySRKgvxuHhaPQU4=' >> "$SSH_PATH/known_hosts"
 
-rsync -r --delete-after --quiet home/repo/_site/ pfs400wm@karli.rrze.uni-erlangen.de:/proj/websource/docs/FAU/fakultaet/phil/www.datascience.phil.fau.de/websource/ghaction-rsync
+ssh -A -tt -o 'StrictHostKeyChecking=no' pfs400wm@karli.rrze.uni-erlangen.de "$*"
+
+# rsync -r --delete-after --quiet home/repo/_site/ pfs400wm@karli.rrze.uni-erlangen.de:/proj/websource/docs/FAU/fakultaet/phil/www.datascience.phil.fau.de/websource/ghaction-rsync
