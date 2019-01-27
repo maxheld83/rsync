@@ -11,4 +11,7 @@ action "Deploy with rsync" {
     "HOST",
     "USER"
   ]
+  args = [
+    "$USER@$HOST:/proj/websource/docs/FAU/fakultaet/phil/www.datascience.phil.fau.de/websource/ghaction-rsync"
+  ]
 }
