@@ -6,8 +6,8 @@ workflow "Test rsync" {
 action "Deploy with rsync" {
   uses = "./rsync"
   secrets = [
-    "PRIVATE_KEY",
-    "PUBLIC_KEY"
+    "SSH_PRIVATE_KEY",
+    "SSH_PUBLIC_KEY"
   ]
   env = {
     HOST = "karli.rrze.uni-erlangen.de"
