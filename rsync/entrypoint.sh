@@ -22,4 +22,4 @@ ssh-add "$SSH_PATH/deploy_key"
 # ssh-keyscan -t ecdsa-sha2-nistp256 karli.rrze.uni-erlangen.de
 echo '$HOST,131.188.16.138 ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBFHJVSekYKuF5pMKyHe1jS9mUkXMWoqNQe0TTs2sY1OQj379e6eqVSqGZe+9dKWzL5MRFpIiySRKgvxuHhaPQU4=' >> "$SSH_PATH/known_hosts"
 
-sh -c "rsync -r --delete-after --quiet -e "ssh -o StrictHostKeyChecking=no" $*"
+sh -c "rsync -r --delete-after --quiet -e 'ssh -o StrictHostKeyChecking=no' $*"
