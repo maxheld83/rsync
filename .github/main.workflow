@@ -9,7 +9,7 @@ action "Write sha" {
 }
 
 action "Deploy with rsync" {
-  uses = "./rsync"
+  uses = "./"
   needs = "Write sha"
   secrets = [
     "SSH_PRIVATE_KEY",
