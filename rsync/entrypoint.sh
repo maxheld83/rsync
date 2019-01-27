@@ -16,8 +16,8 @@ chmod 600 "$SSH_PATH/deploy_key"
 chmod 600 "$SSH_PATH/deploy_key.pub"
 
 eval $(ssh-agent -s)
-# ssh-add "$SSH_PATH/deploy_key"
-eval "$(ssh-add $SSH_PATH/deploy_key)"
+ssh-add "$SSH_PATH/deploy_key"
+#eval "$(ssh-add $SSH_PATH/deploy_key)"
 
 # below key was created by running the below line from inside karli.rrze
 # ssh-keyscan -t ecdsa-sha2-nistp256 karli.rrze.uni-erlangen.de
