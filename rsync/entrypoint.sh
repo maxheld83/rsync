@@ -3,7 +3,7 @@
 set -e
 
 # find just gh repo string
-JUST_GH_REPONAME = `echo $GITHUB_REPOSITORY | sed 's:.*/::'`
+JUST_GH_REPONAME=`echo $GITHUB_REPOSITORY | sed 's:.*/::'`
 
 SSH_PATH="$HOME/.ssh"
 
