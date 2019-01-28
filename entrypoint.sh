@@ -24,7 +24,7 @@ ssh-add "$SSH_PATH/deploy_key"
 # below key was created by running the below line from inside karli.rrze
 # ssh-keyscan -t ecdsa-sha2-nistp256 karli.rrze.uni-erlangen.de
 # below line actually seems ineffectual; we still get "host key verification failed"
-echo '$HOST_NAME,$HOST_IP ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBFHJVSekYKuF5pMKyHe1jS9mUkXMWoqNQe0TTs2sY1OQj379e6eqVSqGZe+9dKWzL5MRFpIiySRKgvxuHhaPQU4=' \
+echo '$HOST_NAME,$HOST_IP $HOST_FINGERPRINT' \
   >> "$SSH_PATH/known_hosts"
 # $HOST_NAME is used in the above as well as in the below; that's why it is an env
 

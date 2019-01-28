@@ -18,6 +18,7 @@ action "Deploy with rsync" {
   env = {
     HOST_NAME = "karli.rrze.uni-erlangen.de"
     HOST_IP = "131.188.16.138"
+    HOST_FINGERPRINT = "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBFHJVSekYKuF5pMKyHe1jS9mUkXMWoqNQe0TTs2sY1OQj379e6eqVSqGZe+9dKWzL5MRFpIiySRKgvxuHhaPQU4="
   }
   args = [
     "$GITHUB_WORKSPACE/index.html",
