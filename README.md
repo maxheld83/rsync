@@ -1,5 +1,7 @@
 # GitHub Action to Deploy via `rsync` over ssh
 
+![Actions Status](https://wdp9fww0r9.execute-api.us-west-2.amazonaws.com/production/badge/maxheld83/ghaction-rsync)
+
 Sometimes, you might want to deploy static assets to some old school webserver over ssh.
 This is your action.
 
