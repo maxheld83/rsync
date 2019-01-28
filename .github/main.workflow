@@ -16,10 +16,11 @@ action "Deploy with rsync" {
     "SSH_PUBLIC_KEY"
   ]
   env = {
-    HOST = "karli.rrze.uni-erlangen.de"
+    HOST_NAME = "karli.rrze.uni-erlangen.de"
+    HOST_IP = "131.188.16.138"
   }
   args = [
     "$GITHUB_WORKSPACE/index.html",
-    "pfs400wm@$HOST:/proj/websource/docs/FAU/fakultaet/phil/www.datascience.phil.fau.de/websource/ghaction-rsync"
+    "pfs400wm@$HOST_NAME:/proj/websource/docs/FAU/fakultaet/phil/www.datascience.phil.fau.de/websource/ghaction-rsync"
   ]
 }
