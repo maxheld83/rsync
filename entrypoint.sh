@@ -28,6 +28,9 @@ echo '$HOST_NAME,$HOST_IP $HOST_FINGERPRINT' \
   >> "$SSH_PATH/known_hosts"
 # $HOST_NAME is used in the above as well as in the below; that's why it is an env
 
+echo $GITHUB_REPOSITORY
+echo $JUST_GH_REPONAME
+
 # "args" from main.workflow get append to below call
 # these include source, user, $HOST and target
 sh -c "rsync -r --delete-after --quiet -e 'ssh -o StrictHostKeyChecking=no' $*"
