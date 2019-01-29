@@ -22,6 +22,6 @@ action "Deploy with rsync" {
   }
   args = [
     "$GITHUB_WORKSPACE/index.html",
-    "pfs400wm@$HOST_NAME:/proj/websource/docs/FAU/fakultaet/phil/www.datascience.phil.fau.de/websource/$JUST_GH_REPONAME"
+    "pfs400wm@$HOST_NAME:/proj/websource/docs/FAU/fakultaet/phil/www.datascience.phil.fau.de/websource/ghaction-rsync"
   ]
 }

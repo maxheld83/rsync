@@ -3,7 +3,8 @@
 set -e
 
 # find just gh repo string
-JUST_GH_REPONAME=`echo $GITHUB_REPOSITORY | sed 's:.*/::'`
+# JUST_GH_REPONAME=`echo $GITHUB_REPOSITORY | sed 's:.*/::'`
+# currently cannot be called from main workflow, so this is useless
 
 SSH_PATH="$HOME/.ssh"
 
@@ -27,9 +28,6 @@ ssh-add "$SSH_PATH/deploy_key"
 echo '$HOST_NAME,$HOST_IP $HOST_FINGERPRINT' \
   >> "$SSH_PATH/known_hosts"
 # $HOST_NAME is used in the above as well as in the below; that's why it is an env
-
-echo $GITHUB_REPOSITORY
-echo $JUST_GH_REPONAME
 
 # "args" from main.workflow get append to below call
 # these include source, user, $HOST and target
