@@ -1,4 +1,3 @@
-# https://hub.docker.com/_/alpine/
 FROM debian:stable-20190122-slim
 
 LABEL "maintainer"="Maximilian Held <info@maxheld.de>"
