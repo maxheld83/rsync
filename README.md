@@ -1,7 +1,7 @@
 # GitHub Action to Deploy via `rsync` over ssh
 
-[![Actions Status](https://wdp9fww0r9.execute-api.us-west-2.amazonaws.com/production/badge/maxheld83/ghaction-rsync)](https://github.com/maxheld83/ghaction-rsync/actions)
-[![GitHubActions](https://img.shields.io/badge/as%20seen%20on%20-GitHubActions-blue.svg)](https://github-actions.netlify.com/ghaction-rsync)
+[![Actions Status](https://wdp9fww0r9.execute-api.us-west-2.amazonaws.com/production/badge/maxheld83/rsync)](https://github.com/maxheld83/rsync/actions)
+[![GitHubActions](https://img.shields.io/badge/as%20seen%20on%20-GitHubActions-blue.svg)](https://github-actions.netlify.com/rsync)
 
 Sometimes, you might want to deploy static assets to some old school webserver over ssh.
 This is your action.
@@ -15,7 +15,7 @@ Helpfully, `/github/workspace` includes a copy of your repository *source*, as w
 GitHub actions is still [in limited public beta](https://github.com/features/actions) and advises against [usage in production](https://developer.github.com/actions/).
 
 This action in particular requires ssh private keys (see secrets), and **may thus be vulnerable**.
-The ssh authentification **may need improvement** (see [issues](https://github.com/maxheld83/ghaction-rsync/)).
+The ssh authentification **may need improvement** (see [issues](https://github.com/maxheld83/rsync/)).
 
 
 ## Secrets
@@ -35,7 +35,7 @@ Remember to never commit these keys, but [provide them to the GitHub UI](https:/
 This action requires three environment variables used to register the target server in `$HOME/.ssh/known_hosts`.
 This is to make sure that the action is talking to a trusted server.
 
-**`known_hosts` verification currently fails and is overriden, see [issue 1](https://github.com/maxheld83/ghaction-rsync/issues/1)**.
+**`known_hosts` verification currently fails and is overriden, see [issue 1](https://github.com/maxheld83/rsync/issues/1)**.
 
 - `HOST_NAME` (the name of the server you wish to deploy to, such as `foo.example.com`)
 - `HOST_IP` (the IP of the server you wish to deploy to, such as `111.111.11.111`)
@@ -60,7 +60,7 @@ For more options and documentation on `rsync`, see [https://rsync.samba.org](htt
 
 ```
 action "Deploy with rsync" {
-  uses = "maxheld83/ghaction-rsync@v0.1"
+  uses = "maxheld83/rsync@v0.1.1"
   needs = "Write sha"
   secrets = [
     "SSH_PRIVATE_KEY",

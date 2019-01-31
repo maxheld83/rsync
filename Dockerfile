@@ -1,8 +1,8 @@
 FROM debian:stable-20190122-slim
 
 LABEL "maintainer"="Maximilian Held <info@maxheld.de>"
-LABEL "repository"="http://github.com/maxheld83/ghaction-rsync"
-LABEL "homepage"="https://www.maxheld.de/ghaction-rsync/"
+LABEL "repository"="http://github.com/maxheld83/rsync"
+LABEL "homepage"="https://www.maxheld.de/rsync/"
 
 LABEL "com.github.actions.name"="Rsync Deploy"
 LABEL "com.github.actions.description"="Deploy to a remote server with rsync via ssh."
