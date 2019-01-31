@@ -14,7 +14,7 @@ Helpfully, `/github/workspace` includes a copy of your repository *source*, as w
 
 GitHub actions is still [in limited public beta](https://github.com/features/actions) and advises against [usage in production](https://developer.github.com/actions/).
 
-This action in particular requires ssh private keys (see secrets), and **may be vulnerable**.
+This action in particular requires ssh private keys (see secrets), and **may thus be vulnerable**.
 The ssh authentification **may need improvement** (see [issues](https://github.com/maxheld83/ghaction-rsync/)).
 
 
@@ -22,10 +22,12 @@ The ssh authentification **may need improvement** (see [issues](https://github.c
 
 This action requires two secrets to authenticate over ssh:
 
-- `SSH_PRIVATE_KEY` (you get the server you wish to deploy to)
-- `SSH_PUBLIC_KEY` (you get the server you wish to deploy to)
+- `SSH_PRIVATE_KEY`
+- `SSH_PUBLIC_KEY`
 
-Remember to never commit these keys, but provide them to the GitHub UI (repository settings).
+You get both of these from the server you deploy to.
+
+Remember to never commit these keys, but [provide them to the GitHub UI](https://developer.github.com/actions/creating-workflows/storing-secrets/) (repository settings/secrets).
 
 
 ## Environment Variables
@@ -33,7 +35,7 @@ Remember to never commit these keys, but provide them to the GitHub UI (reposito
 This action requires three environment variables used to register the target server in `$HOME/.ssh/known_hosts`.
 This is to make sure that the action is talking to a trusted server.
 
-**`known_hosts` verification is currently overriden, see [issue 1](https://github.com/maxheld83/ghaction-rsync/issues/1)**.
+**`known_hosts` verification currently fails and is overriden, see [issue 1](https://github.com/maxheld83/ghaction-rsync/issues/1)**.
 
 - `HOST_NAME` (the name of the server you wish to deploy to, such as `foo.example.com`)
 - `HOST_IP` (the IP of the server you wish to deploy to, such as `111.111.11.111`)
