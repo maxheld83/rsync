@@ -60,7 +60,7 @@ For more options and documentation on `rsync`, see [https://rsync.samba.org](htt
 
 ```
 action "Deploy with rsync" {
-  uses = "maxheld83/ghaction-rsync"
+  uses = "maxheld83/ghaction-rsync@v0.1"
   needs = "Write sha"
   secrets = [
     "SSH_PRIVATE_KEY",
