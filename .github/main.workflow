@@ -9,7 +9,6 @@ action "Write sha" {
 }
 
 action "Deploy with rsync" {
-  uses = "./"
   needs = "Write sha"
   secrets = [
     "SSH_PRIVATE_KEY",
@@ -24,4 +23,5 @@ action "Deploy with rsync" {
     "$GITHUB_WORKSPACE/index.html",
     "pfs400wm@$HOST_NAME:/proj/websource/docs/FAU/fakultaet/phil/www.datascience.phil.fau.de/websource/ghaction-rsync"
   ]
+  uses = "./"
 }
