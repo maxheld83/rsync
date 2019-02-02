@@ -13,7 +13,7 @@ action "Deploy with rsync" {
   needs = "Write sha"
   secrets = [
     "SSH_PRIVATE_KEY",
-    "SSH_PUBLIC_KEY"
+    "SSH_PUBLIC_KEY",
   ]
   env = {
     HOST_NAME = "karli.rrze.uni-erlangen.de"
@@ -22,6 +22,6 @@ action "Deploy with rsync" {
   }
   args = [
     "$GITHUB_WORKSPACE/index.html",
-    "pfs400wm@$HOST_NAME:/proj/websource/docs/FAU/fakultaet/phil/www.datascience.phil.fau.de/websource/ghaction-rsync"
+    "pfs400wm@$HOST_NAME:/proj/websource/docs/FAU/fakultaet/phil/www.datascience.phil.fau.de/websource/ghaction-rsync",
   ]
 }
