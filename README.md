@@ -1,12 +1,12 @@
-# GitHub Action to Deploy via `rsync` over ssh
+# GitHub Action for Deploying via `rsync` Over `ssh`
 
 [![Actions Status](https://wdp9fww0r9.execute-api.us-west-2.amazonaws.com/production/badge/maxheld83/rsync)](https://github.com/maxheld83/rsync/actions)
 [![GitHubActions](https://img.shields.io/badge/as%20seen%20on%20-GitHubActions-blue.svg)](https://github-actions.netlify.com/rsync)
 
-Sometimes, you might want to deploy static assets to some old school webserver over ssh.
+Sometimes, you might want to use `rsync` inside GitHub actions, such as for deploying static assets to some old school webserver over ssh.
 This is your action.
 
-It allows you to transfer files *from* your working directory (`/github/workspace`) *to* some server using `rsync` over ssh.
+It allows you to transfer files *from* your working directory (`/github/workspace`) *to* some server using `rsync` over `ssh`.
 Helpfully, `/github/workspace` includes a copy of your repository *source*, as well as any build artefacts left behind by previous workflow steps (= other actions you ran before).
 
 
@@ -14,7 +14,7 @@ Helpfully, `/github/workspace` includes a copy of your repository *source*, as w
 
 GitHub actions is still [in limited public beta](https://github.com/features/actions) and advises against [usage in production](https://developer.github.com/actions/).
 
-This action in particular requires ssh private keys (see secrets), and **may thus be vulnerable**.
+This action requires ssh private keys (see secrets), and **may thus be vulnerable**.
 The ssh authentification **may need improvement** (see [issues](https://github.com/maxheld83/rsync/)).
 
 
@@ -25,9 +25,9 @@ This action requires two secrets to authenticate over ssh:
 - `SSH_PRIVATE_KEY`
 - `SSH_PUBLIC_KEY`
 
-You get both of these from the server you deploy to.
+You get both of these from the server you interact with.
 
-Remember to never commit these keys, but [provide them to the GitHub UI](https://developer.github.com/actions/creating-workflows/storing-secrets/) (repository settings/secrets).
+Remember to never commit these keys, but [provide them through the GitHub UI](https://developer.github.com/actions/creating-workflows/storing-secrets/) (repository settings/secrets).
 
 
 ## Environment Variables

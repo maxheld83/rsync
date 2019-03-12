@@ -2,10 +2,7 @@
 
 set -e
 
-# find just gh repo string
-# JUST_GH_REPONAME=`echo $GITHUB_REPOSITORY | sed 's:.*/::'`
-# currently cannot be called from main workflow, so this is useless
-
+# SSH auth ===
 SSH_PATH="$HOME/.ssh"
 
 mkdir "$SSH_PATH"
@@ -31,4 +28,4 @@ echo '$HOST_NAME,$HOST_IP $HOST_FINGERPRINT' \
 
 # "args" from main.workflow get append to below call
 # these include source, user, $HOST and target
-sh -c "rsync -r --delete-after --quiet -e 'ssh -o StrictHostKeyChecking=no' $*"
+sh -c "rsync --verbose --recursive --delete-after --quiet -e 'ssh -o StrictHostKeyChecking=no' $*"
