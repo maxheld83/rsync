@@ -10,7 +10,7 @@ action "Shellcheck" {
 
 action "Write sha" {
   uses = "actions/bin/sh@db72a46c8ce298e5d2c3a51861e20c455581524f"
-  args = ["echo $GITHUB_SHA >> index.html"]
+  args = ["echo $GITHUB_SHA > index.html"]
 }
 
 action "Deploy with rsync" {
