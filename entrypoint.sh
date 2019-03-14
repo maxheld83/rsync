@@ -24,4 +24,4 @@ echo "$HOST_NAME,$HOST_IP $HOST_FINGERPRINT" \
 
 # "args" from main.workflow get append to below call
 # these include source, user, $HOST and target
-sh -c "rsync --verbose --recursive --delete-after --quiet -e$*"
+sh -c "rsync --verbose --recursive --delete-after --quiet -e $*"
