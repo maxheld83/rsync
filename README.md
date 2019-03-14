@@ -2,6 +2,7 @@
 
 [![Actions Status](https://wdp9fww0r9.execute-api.us-west-2.amazonaws.com/production/badge/maxheld83/rsync)](https://github.com/maxheld83/rsync/actions)
 [![GitHubActions](https://img.shields.io/badge/as%20seen%20on%20-GitHubActions-blue.svg)](https://github-actions.netlify.com/rsync)
+[![View Action](https://img.shields.io/badge/view-action-blue.svg)](https://github.com/marketplace/actions/rsync-deploy)
 
 Sometimes, you might want to use `rsync` inside GitHub actions, such as for deploying static assets to some old school webserver over ssh.
 This is your action.
