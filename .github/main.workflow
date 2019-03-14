@@ -13,6 +13,9 @@ action "Write sha" {
   args = ["echo $GITHUB_SHA > index.html"]
 }
 
+
+# fingerprint below was created by running the below line from inside karli.rrze
+# ssh-keyscan -t ecdsa-sha2-nistp256 karli.rrze.uni-erlangen.de
 action "Deploy with rsync" {
   uses = "./"
   needs = "Write sha"
