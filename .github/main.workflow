@@ -3,7 +3,13 @@ workflow "Test rsync" {
   resolves = ["Deploy with rsync"]
 }
 
+action "Shellcheck" {
+  uses = "actions/bin/shellcheck@1b3c130914f7b20890bf159306137d994a4c39d0"
+  args = "*.sh"
+}
+
 action "Write sha" {
+  needs = "Shellcheck"
   uses = "actions/bin/sh@db72a46c8ce298e5d2c3a51861e20c455581524f"
   args = ["echo $GITHUB_SHA >> index.html"]
 }

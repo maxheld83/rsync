@@ -16,13 +16,13 @@ chmod 600 "$SSH_PATH/known_hosts"
 chmod 600 "$SSH_PATH/deploy_key"
 chmod 600 "$SSH_PATH/deploy_key.pub"
 
-eval $(ssh-agent -s)
+eval "$(ssh-agent -s)"
 ssh-add "$SSH_PATH/deploy_key"
 
 # below key was created by running the below line from inside karli.rrze
 # ssh-keyscan -t ecdsa-sha2-nistp256 karli.rrze.uni-erlangen.de
 # below line actually seems ineffectual; we still get "host key verification failed"
-echo '$HOST_NAME,$HOST_IP $HOST_FINGERPRINT' \
+echo "$HOST_NAME,$HOST_IP $HOST_FINGERPRINT" \
   >> "$SSH_PATH/known_hosts"
 # $HOST_NAME is used in the above as well as in the below; that's why it is an env
 
