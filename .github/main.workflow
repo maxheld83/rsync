@@ -1,6 +1,6 @@
 workflow "Test rsync" {
   on = "push"
-  resolves = ["Deploy with rsync"]
+  resolves = ["Bats"]
 }
 
 action "Shellcheck" {
@@ -30,4 +30,10 @@ action "Deploy with rsync" {
     "$GITHUB_WORKSPACE/index.html",
     "pfs400wm@$HOST_NAME:/proj/websource/docs/FAU/fakultaet/phil/www.datascience.phil.fau.de/websource/rsync"
   ]
+}
+
+action "Bats" {
+  needs = "Deploy with rsync"
+  uses = "actions/bin/bats@bd85fd8c369e36eb918c888218aa95469b69daba"
+  args = "*.bats"
 }
